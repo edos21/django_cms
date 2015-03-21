@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'siteinfo',
+    'articles',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,6 +58,14 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'django_cms.urls'
 
 WSGI_APPLICATION = 'django_cms.wsgi.application'
+
+
+#Articles App
+ARTICLE_BLOCKS = (
+    # Slider
+    ('slider-home', '[Home/Slider] Slider (930x380)',
+        {'template_name': 'articles/home_primary.html'}),
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
