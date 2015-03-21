@@ -42,6 +42,7 @@ $RECYCLE.BIN/
 *.pyc
 *.sql
 local_settings.py
+/migrations
 
 # Packages
 *.egg
