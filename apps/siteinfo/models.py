@@ -8,12 +8,17 @@ class SiteInfo(models.Model):
     title = models.CharField(_(u'Title'), max_length=200)
     subtitle = models.CharField(_(u'SubTitle'), max_length=200, blank=True, null=True)
     description = models.TextField(_(u'Description'), blank=True, null=True)
-    logo = models.FileField(_(u'Logo'), upload_to='/img', blank=True, null=True)
-    favicon = models.FileField(_(u'favicon'), upload_to='/img', blank=True, null=True)
-    base_css = models.FileField(_(u'Base CSS'), upload_to='/css', blank=True, null=True)
+    logo = models.FileField(_(u'Logo'), upload_to='img/', blank=True, null=True)
+    favicon = models.FileField(_(u'favicon'), upload_to='img/', blank=True, null=True)
+    base_css = models.FileField(_(u'Base CSS'), upload_to='css/', blank=True, null=True)
 
     def __unicode__(self):
         return "%s, %s" % (self.title, self.subtitle)
+
+    @property
+    def get_stores(self):
+        stores = Store.objects.filter(site=self).order_by('id')
+        return stores
 
 
 class Store(models.Model):

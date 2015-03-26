@@ -1,0 +1,10 @@
+{{ site.title }}
+
+{{ site.description }}<br>
+===========================<br>
+{{ site.stores }}
+{% for store in site.get_stores %}
+	{{ store }}
+	{{ store.phone }}
+	<br>
+{%endfor%}
