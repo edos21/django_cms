@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load articles_tags %}
+
+{% block content %}
+  {% block slider %}
+    {% include "articles/home_primary.html" %}
+  {% endblock %}
+
+  {% block service %}
+    {% include "include/service.html" %}
+  {% endblock %}
+
+  {% block work %}
+    {% include "include/work.html" %}
+  {% endblock %}
+
+  {% block portafolio %}
+    {% include "include/portafolio.html" %}
+  {% endblock %}
+
+  {% block client %}
+    {% include "include/client.html" %}
+  {% endblock %}
+
+  {% block logos %}
+    {% include "include/client.html" %}
+  {% endblock %}
+
+  {% block team %}
+    {% include "include/team.html" %}
+  {% endblock %}
+
+  {% block twitter %}
+    {% include "include/twitter.html" %}
+  {% endblock %}
+{% endblock %}

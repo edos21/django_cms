@@ -1,0 +1,26 @@
+{% load  staticfiles articles_tags %}
+{% get_articles "slider-home" as articles %}
+<style>
+  .top_cont_inner{
+    {% for article in articles %}
+      background: url(..{{ MEDIA_URL }}{{ article.file }}) no-repeat right bottom;
+    {% endfor %}
+  }
+</style>
+<section id="top_content" class="top_cont_outer">
+  <div class="top_cont_inner">
+    <div class="container">
+      <div class="top_content">
+        <div class="row">
+          <div class="col-lg-5 col-sm-7">
+            <div class="top_left_cont ">
+              {% for article in articles %}
+                {{ article.description|safe }}
+              {% endfor %}
+            </div>
+          <div class="col-lg-7 col-sm-5"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+{% load  staticfiles articles_tags %}
+{% get_articles "services" as services %}
+  <section  id="service">
+    <div class="container">
+      <h2>Services</h2>
+      <div class="service_area">
+        <div class="row">
+          
+          {% for service in services %}
+            <div class="col-lg-4">
+              <div class="service_block">
+                <div class="service_icon delay-03s animated wow  zoomIn"><img src="{{ MEDIA_URL }}{{ service.file }}" alt=""></div>
+                <h3 class="animated fadeInUp wow">{{ service.title }}</h3>
+                <p class="animated fadeInDown wow">{{ service.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </section>

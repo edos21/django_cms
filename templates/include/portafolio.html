@@ -1,0 +1,41 @@
+{% load  staticfiles articles_tags %}
+{% get_articles "portafolio" as portafolios %}
+  <section id="Portfolio" class="content"> 
+    <div class="container portfolio-title"> 
+      <div class="section-title">
+        <h2>Portfolio</h2>
+      </div>
+    </div>
+    <div class="portfolio-top"></div>
+    <div class="portfolio"> 
+      <div class="isotope" style="position: relative; overflow: hidden; height: 480px;" id="portfolio-wrap"> 
+
+        {% for portafolio in portafolios %}
+          <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four isotope-item">
+            <div class="portfolio-image"> <img src="{{ MEDIA_URL }}{{ portafolio.file }}"  alt="Portfolio 1"> </div>
+            <a title="Starbucks Coffee" rel="prettyPhoto[galname]" href="{{ portafolio.link }}">
+            <div class="project-overlay">
+              <div class="project-info">
+                <div class="zoom-icon"></div>
+                <h4 class="project-name">{{ portafolio.title }}</h4>
+                <p class="project-categories">{{ portafolio.description }}</p>
+              </div>
+            </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <!--/Portfolio Wrap --> 
+      
+    </div>
+    <!--/Portfolio Plus Filters -->
+    
+    <div class="portfolio-bottom"></div>
+    
+    <!-- Project Page Holder-->
+    <div id="project-page-holder">
+      <div class="clear"></div>
+      <div id="project-page-data"></div>
+    </div>
+    <!--/Project Page Holder--> 
+  </section>
